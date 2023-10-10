@@ -1,15 +1,7 @@
+import { type AppRouter } from '@/server/routers/_app';
 import { httpBatchLink } from '@trpc/client';
 import { createTRPCNext } from '@trpc/next';
-import { createServerSideHelpers } from '@trpc/react-query/server';
-import { appRouter, type AppRouter } from '@/server/routers/_app';
 import superjson from 'superjson';
-import { createContext } from '@/server/trpc';
-
-export const trpcSSR = createServerSideHelpers({
-	router: appRouter,
-	ctx: createContext(),
-	transformer: superjson, // optional - adds superjson serialization
-});
 
 function getBaseUrl() {
 	if (typeof window !== 'undefined')
