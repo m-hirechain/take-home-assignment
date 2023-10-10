@@ -1,13 +1,16 @@
-import { trpc } from '@/lib/trpc';
+import { Profile, ProfileProps } from '@/components/Profile';
+import { ProfileForm } from '@/components/ProfileForm';
+import { NextPage } from 'next';
 
-const HomePage = () => {
-	const query = trpc.hello.useQuery({ text: 'world' });
+type ProfilePageProps = ProfileProps;
 
-	if (query.isLoading) return <div>loading...</div>;
-
-	if (query.isError) return <div>{query.error.message}</div>;
-
-	return <div>{query.data.greeting}</div>;
+const ProfilePage: NextPage<ProfilePageProps> = (props) => {
+	return (
+		<div className='mt-32 container space-x-8 flex justify-center mx-auto'>
+			<Profile profile={props.profile} />
+			<ProfileForm />
+		</div>
+	);
 };
 
-export default HomePage;
+export default ProfilePage;
