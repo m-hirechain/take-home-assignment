@@ -1,18 +1,22 @@
-import { z } from 'zod';
+import {
+	GET_PROFILE_TRPC_SCHEMA,
+	UPDATE_PROFILE_TRPC_SCHEMA,
+} from '@/lib/validation-schemas/profile';
 import { procedure, router } from '@/server/trpc';
 
-export const appRouter = router({
-	hello: procedure
-		.input(
-			z.object({
-				text: z.string(),
-			})
-		)
-		.query((opts) => {
-			return {
-				greeting: `hello ${opts.input.text}`,
-			};
+const profileRouter = router({
+	updateProfile: procedure
+		.input(UPDATE_PROFILE_TRPC_SCHEMA)
+		.mutation(({ input }) => {
+			// TODO: save profile data to a mock db of your choosing
 		}),
+	getProfile: procedure.input(GET_PROFILE_TRPC_SCHEMA).query(({ input }) => {
+		// TODO: get profile data from mock db
+	}),
+});
+
+export const appRouter = router({
+	profile: profileRouter,
 });
 
 // export type definition of API
