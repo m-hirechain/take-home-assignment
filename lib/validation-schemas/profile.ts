@@ -15,5 +15,3 @@ export const UPDATE_PROFILE_FORM_SCHEMA = PROFILE_SCHEMA.omit({
 	.partial();
 
 export const UPDATE_PROFILE_TRPC_SCHEMA = PROFILE_SCHEMA.partial();
-
-export const GET_PROFILE_TRPC_SCHEMA = PROFILE_SCHEMA.pick({ username: true });
