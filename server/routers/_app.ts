@@ -1,7 +1,4 @@
-import {
-	GET_PROFILE_TRPC_SCHEMA,
-	UPDATE_PROFILE_TRPC_SCHEMA,
-} from '@/lib/validation-schemas/profile';
+import { UPDATE_PROFILE_TRPC_SCHEMA } from '@/lib/validation-schemas/profile';
 import { procedure, router } from '@/server/trpc';
 
 const profileRouter = router({
@@ -10,7 +7,7 @@ const profileRouter = router({
 		.mutation(({ input }) => {
 			// TODO: save profile data to a mock db of your choosing
 		}),
-	getProfile: procedure.input(GET_PROFILE_TRPC_SCHEMA).query(({ input }) => {
+	getProfile: procedure.query(async () => {
 		// TODO: get profile data from mock db
 	}),
 });
