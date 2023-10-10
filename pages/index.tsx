@@ -1,13 +1,11 @@
-import { Profile, ProfileProps } from '@/components/Profile';
+import { Profile } from '@/components/Profile';
 import { ProfileForm } from '@/components/ProfileForm';
 import { NextPage } from 'next';
 
-type ProfilePageProps = ProfileProps;
-
-const ProfilePage: NextPage<ProfilePageProps> = (props) => {
+const ProfilePage: NextPage = () => {
 	return (
 		<div className='mt-32 container space-x-8 flex justify-center mx-auto'>
-			<Profile profile={props.profile} />
+			<Profile />
 			<ProfileForm />
 		</div>
 	);
