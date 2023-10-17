@@ -1,7 +1,7 @@
 # Assignment
 
 - Fork this repository
-- Add @bkrhub and @voiys as colaborators
+- Add @bkrhub and @voiys as collaborators
 - Complete the assignment
 - Shoot us a message to check it out
 
