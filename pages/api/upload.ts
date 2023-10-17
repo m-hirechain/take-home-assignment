@@ -3,10 +3,11 @@ import { withFileUpload, getConfig } from 'next-multiparty';
 export const config = getConfig();
 
 const profilePictureUploadHandler = withFileUpload(async (req, res) => {
-	// TODO: save file locally and serve the url back
+	// TODO: save file either locally or to a file storage of your choosing
+	// and return the url to store it in the submit process
 
 	return res.status(201).json({
-		imageUrl: 'pfp image url here',
+		pfp: 'pfp image url here',
 	});
 });
 

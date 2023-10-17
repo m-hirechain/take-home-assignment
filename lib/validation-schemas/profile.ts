@@ -10,7 +10,10 @@ export const UPDATE_PROFILE_FORM_SCHEMA = PROFILE_SCHEMA.omit({
 	pfp: true,
 })
 	.extend({
-		imageFile: z.any(), // validate for File type on the frontend
+		// TODO: replace this validation with something
+		// that will make sure this is of type File
+		// and the file is less than 1mb in size
+		imageFile: z.any(),
 	})
 	.partial();
 
