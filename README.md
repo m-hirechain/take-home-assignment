@@ -1,8 +1,9 @@
 # Assignment
 
-- Fork this repository
+- Clone this repository
+- Create your own private repo on github
 - Add @bkrhub and @voiys as collaborators
-- Complete the assignment
+- Upload the completed assignment to your private repo
 - Shoot us a message to check it out
 
 # Scenario: 
